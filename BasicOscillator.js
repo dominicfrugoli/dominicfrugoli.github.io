@@ -1,49 +1,33 @@
-
-
-var osc, freq, amp, isPlaying;
-
-var columnWidth = 50;
-var lastColumn = 1;
-
+let polySynth;
 
 function setup() 
 {
-  let canvas = createCanvas(640, 360);
-  canvas.mouseIsPressed(playOsc);
-  osc = new p5.Oscillator('sine');
-  colorMode(HSB, height, height, height)
-  noStroke();
-  background(255);
+  let cnv = createCanvas(100, 100);
+  cnv.mousePressed(playSynth);
+  background(220);
+  text('click to play', 20, 20);
+  polySynth = new p5.PolySynth();
 }
 
 
-function draw()
-{                        
-    let whichColumn = mouseX/columnWidth;
-    if(whichColumn != lastColumn)
-    {
-      var columnX = whichColumn * columnWidth;
-      fill(mouseY, height, height);
-      rect(columnX, 0, columnWidth, height);
-      lastColumn = whichColumn;
-    }
-    if(isPlaying)
-    {
-        osc.freq(freq, 0.1);
-        osc.amp(amp, 0.1);
-    }
-  
-}
-
-
-function playOsc()
+function playSynth() 
 {
-    osc.start();
-    isPlaying = true;
-}
+  userStartAudio();
 
-function mouseReleased()
-{
-    osc.amp(0, 0.5);
-    isPlaying = false;
+  // note duration (in seconds)
+  let dur = 1.5;
+
+  // time from now (in seconds)
+  let time = 0;
+
+  // velocity (volume, from 0 to 1)
+  let vel = 0.1;
+
+  // notes can overlap with each other
+  polySynth.play('G2', vel, 0, dur);
+  polySynth.play('C3', vel, time += 1/3, dur);
+  polySynth.play('G3', vel, time += 1/3, dur);
+  polySynth.play('E3', vel, 0, dur);
+  polySynth.play('D5', vel, time += 1/3, dur);
+  polySynth.play('B4', vel, time += 1/3, dur);
 }
