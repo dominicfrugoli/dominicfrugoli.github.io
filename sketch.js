@@ -1,33 +1,26 @@
-/**
- * Mouse 1D. 
- * 
- * Move the mouse left and right to shift the balance. 
- * The "mouseX" variable is used to control both the 
- * size and color of the rectangles. 
- */
+let mySound;
 
-let osc, freq1, freq2;
-
-
-function setup() 
-{
-  let cnv = createCanvas(1080, 360);
-  noStroke();
-  colorMode(RGB, height, height, height);
-  rectMode(CENTER);
+function preload() {
+  soundFormats('mp3', 'wav');
+  mySound = loadSound('/Users/dominicfrugoli/Desktop/lib/empty-example/dvorak.mp3');
 }
 
-function draw() 
+function setup() {
+  let cnv = createCanvas(400, 300);
+  background(220);
+  cnv.mousePressed(canvasPressed); 
+  
+  text('tap here to play', 10, 20);
+}
+
+function draw()
 {
-  
-  background(200);
-  let r1 = map(mouseX, 0, width, 0, height);
-  let r2 = height-r1;
-  
-  fill(0, r1, 150);
-  rect(width/2 + r1/2, height/2, r1, r1);
-  
-  fill(0, 150, r2);
-  rect(width/2 - r2/2, height/2, r2, r2);
-  
+    background(220);
+    cnv.mousePressed(canvasPressed);
+}
+
+function canvasPressed() {
+  // playing a sound file on a user gesture
+  // is equivalent to `userStartAudio()`
+  mySound.play();
 }

@@ -1,17 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
-    
-    <title>p5.sound Sketch</title>
-    <p>Dominic Frugoli Sound Site</p>
+<html lang="">
 
-    <canvas id="cnv"></canvas>
-    <script src="audio.js"></script>
+<head>
+  <meta charset="utf-8">
+  <title>p5.js example</title>
+  <h1>Baby's First Drum Machine</h1>
+  <script src="../p5.min.js"></script>
+  <script src="../addons/p5.sound.js"></script>
+  <canvas id="myCanvas"></canvas>
+  <script src="sketch.js"></script> 
 </head>
+
 <body>
-    
+  <audio id="kick">
+    <source src="Kick.wav" type="audio/wav">
+  </audio>
+  <audio id="snare">
+    <source src="Snare.wav" type="audio/wav">
+  </audio>
+  <audio id="hat">
+    <source src="Hat.wav" type="audio/wav">
+  </audio>
+  <audio id="crash">
+    <source src="Crash.wav" type="audio/wav">
+  </audio>
+
+  <script>
+    function playSample(sampleId)
+    {
+      var sample = document.getElementById(sampleId);
+      sample.currentTime = 0;
+      sample.play();
+    }
+  </script>
+
+  <img id="kickPic" src="kick.png" alt="KickPicture" onclick="playSample('kick')" width="250" height="250">
+  <img id="snarePic" src="snare.png" alt="SnarePicture" onclick="playSample('snare')" width="250" height="250">
+  <img id="hatPic" src="hat.png" alt="HatPicture" onclick="playSample('hat')" width="250" height="250">
+  <img id="crashPic" src="crash.png" alt="CrashPicture" onclick="playSample('crash')" width="250" height="250">
+  
+
 </body>
+
 </html>
