@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Magnetic Lighthouse - Dominic Frugoli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Magnetic Lighthouse Project" />
+    <meta name="keywords" content="Magnetic Lighthouse, Project, Dominic Frugoli, Pure Data" />
+    <meta name="author" content="Dominic Frugoli" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="../css/flexslider.css">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="../js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
+    <body>
+    <div id="colorlib-page">
+        <div class="container-wrap">
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+            <div class="text-center">
+                <div class="author-img" style="background-image: url(../images/about.jpg);"></div>
+                <h1 id="colorlib-logo"><a href="../index.html">Dominic Frugoli</a></h1>
+                <span class="position text-box" style="font-family: 'Montserrat', sans-serif;"><b>Audio Designer <br>and Programmer</b><br>Based in Chicago</span>
+            </div>
+
+            <div class="text-center">
+                <a href="../index.html" class="btn btn-primary btn-lg">Back to Home</a>
+            </div>
+
+            <div class="colorlib-footer">
+                <p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved<br>Made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Template from html5up</span></small></p>
+                <ul>
+                    <li><a href="#"><i class="icon-facebook2"></i></a></li>
+                    <li><a href="#"><i class="icon-twitter2"></i></a></li>
+                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+                    <li><a href="#"><i class="icon-linkedin2"></i></a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <div id="colorlib-main">
+            <section class="colorlib-about" data-section="about">
+                <div class="colorlib-narrow-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row row-bottom-padded-sm" data-animate-effect="fadeInLeft">
+                                <div class="col-md-12">
+                                    <div class="about-desc">
+                                        <div class="banner" style="background-image: url('../images/magenticLightouse_Background.jpg'); height: 300px; background-size: cover; background-position: center;"></div>
+                                        <br>
+                                        <h2 class="colorlib-heading" style="font-size: 2.5em; margin-bottom: 10px; font-family: 'Montserrat', sans-serif;">Magnetic Lighthouse</h2>
+                                        <span class="heading-meta">A truly spacial Pure Data effect</span>  
+                                        <hr>
+                                        <p>Pulsars are extremely magnetized neutrons stars that rotate and emit electromagnetic radiations in beams. Every so often, their magnetized beam lines up with Earth in something called the lighthouse effect. This effect aims to try and capture this stable rotation along with the instability of space in general. That push and pull is felt throughout the whole effect and the instability comes nearer to the end where everything fast enough to reach full chaotic noise.​</p>
+                                        <p>This general description is the overall sound of what I was aiming to achieve when designing this audio effect in Pure Data. This patch was done as part of an assignment for a Digital Audio Effects Programming class. The entire class put on somewhat of an exhibition where every student would design an audio effect based on a specific part of a theme. For our class, we chose to do space as a general theme and went with the very clever title of 2022: An SFX Odyssey for the title of the exhibition. I chose to go with pulsar stars for my specific topic in the overall theme.</p>
+                                        <p>As far as specifics for the patch goes, the only parameters that needed to be part of the patch were: it needs to have a stereo signal path (in and out), it needs to be automated using the [qlist] object in Pd, it needs to be 3 minutes in length, no abstractions, and vanilla Pd only. Besides that, the only thing that was blocking us was what we could come up with.</p>
+                                        <p>When it came to patch design, I wanted to have a patch that incorporated many different speeds of pulses all coming together and changing over time. I did this using several different pulsing effects, the most audible ones being the tremolo and the vibrato/chorus that are prevalent in the beginning. The tremolo speed is being changed over time by the [qlist] and has some slight clipping on it that changes as well. The vibrato has some random elements to it that cause it to be slightly different every time the patch is run, just cause you know... why not? Another big part of the patch is the amplitude modulation going on which really picks up near the end. I went with this because it is essentially just really fast pulsing affecting an audio signal and it gives a kind of harshness that I think fit really well with the theme. Lastly, there is a reverb to give it a really wide feeling to it, and a stereo filter that gives a nice stereo sense over time.</p>
+                                        <p>For the [qlist], my main focus was trying to hit specific moments and "beats" in the effect to almost tell a little story. You can feel the pulsar getting faster and faster and at some point, it all drops for a second. Then the amplitude modulation comes in and it is the first time in the effect where there is no tremolo and it gives this sense of floating for a second. I found that using the automation in a way to reach these moments and show somewhat of a juxtaposition between the constant pulsing and the harshness of the amplitude modulation really gave the effect a more "composition-esque" feel to it.</p>
+                                        <p>As far as the patch goes, that's about it. Feel free to take a deeper look at the patch to see how all of that is achieved and how it is affected by the qlist over time. But overall, it is somewhat simple as far as the audio processing itself goes. A lot of the effort was focused on trying to tell that story and evoke that feeling of a pulsar star in space. Hopefully it worked out, but at the end of the day I'm quite happy with how this turned out and was very impressed by all of my classmates' projects. Having all of the projects be a part of this common theme just gave a whole new level of intrigue and connection between all the patches.</p>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" data-animate-effect="fadeInLeft">
+                                    <div class="project" style="background-image: url(../images/hexmodal_ThumbNail.jpg);">
+                                        <div class="desc">
+                                            <div class="con">
+                                                <h3><a href="#">Hexmodal</a></h3>
+                                                <span>Project Description</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" data-animate-effect="fadeInLeft">
+                                    <p><a href="../index.html" class="btn btn-primary btn-lg btn-load-more">Back to Home <i class="icon-reload"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div><!-- end:colorlib-main -->
+    </div><!-- end:container-wrap -->
+    </div><!-- end:colorlib-page -->
+
+    <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="../js/jquery.flexslider-min.js"></script>
+    <!-- Owl carousel -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <!-- Counters -->
+    <script src="../js/jquery.countTo.js"></script>
+    
+    <!-- MAIN JS -->
+    <script src="../js/main.js"></script>
+
+    </body>
+</html>
